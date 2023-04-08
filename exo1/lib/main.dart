@@ -90,26 +90,11 @@ class _CounterState extends State<Counter> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const SizedBox(height: 16),
-            MaterialButton(
-              color:
-                  Color.fromARGB(255, 233, 144, 174), // set the color to pink
-              onPressed: _increment,
-              child: Text('Increment'),
-            ),
+            CounterIncrementor(onPressed: _increment),
             const SizedBox(height: 16),
-            MaterialButton(
-              color:
-                  Color.fromARGB(255, 243, 169, 194), // set the color to pink
-              onPressed: _decrement,
-              child: Text('Decrement'),
-            ),
+            CounterDecrementor(onPressed: _decrement),
             const SizedBox(height: 16),
-            MaterialButton(
-              color:
-                  Color.fromARGB(255, 233, 144, 174), // set the color to pink
-              onPressed: _SetToZero,
-              child: Text('Set to Zero'),
-            ),
+            CounterSetToZero(onPressed: _SetToZero),
             const SizedBox(height: 16),
             CounterDisplay(count: _counter),
           ],
@@ -117,16 +102,16 @@ class _CounterState extends State<Counter> {
       ],
     );
   }
+}
 
-  void main() {
-    runApp(
-      const MaterialApp(
-        home: Scaffold(
-          body: Center(
-            child: Counter(),
-          ),
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
         ),
       ),
-    );
-  }
+    ),
+  );
 }
